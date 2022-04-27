@@ -6,14 +6,14 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
 
-public class findJUnit5Test {
+public class FindJUnit5Test {
 
     @Test
     void selenideGithubCodeJUnit5(){
         open("https://github.com/selenide/selenide");
         $("#wiki-tab").click();
         $("#wiki-pages-filter").setValue("softassertions");
-        $(By.linkText("SoftAssertions")).shouldBe(visible).click();
+        $(By.linkText("SoftAssertions")).click();
         $$(".markdown-body").findBy(visible).shouldHave(text("Using JUnit5 extend test class"));
     }
 }
